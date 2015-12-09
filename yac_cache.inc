@@ -1,0 +1,1 @@
+/Users/panjunliu/verycloud/contrib/yac_drupal/yac_cache.inc
