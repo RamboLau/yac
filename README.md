@@ -1,4 +1,6 @@
 ## Yac For drupal7
+Yac is a shared and lockless memory user data cache for PHP.
+it can be used to replace APC or local memcached.
 
 1. Installation
 2. Testing
@@ -8,9 +10,12 @@
 Enable the module and make sure the YAC extension is installed properly on
 the status page (http://yoursite/admin/reports/status).
 
-Yac is a shared and lockless memory user data cache for PHP.
+if not, try this.
 
-it can be used to replace APC or local memcached.
+```bash
+yum install php-pecl-yac -y
+```
+
 
 ####Step 2
 Add the following code to your settings.php file:
