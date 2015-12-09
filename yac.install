@@ -1,1 +1,37 @@
-/Users/panjunliu/verycloud/contrib/yac_drupal/yac.install
+<?php
+
+/**
+ * Implements hook_requirements().
+ */
+function yac_requirements($phase) {
+  $requirements = array();
+  // Ensure translations don't break at install time
+  $t = get_t();
+
+  // Test YAC.
+  $YAC_enabled = extension_loaded('yac');
+
+  $requirements['YAC'] = array(
+    'title' => $t('YAC'),
+    'value' => $YAC_enabled ? $t('Available') : $t('Not available'),
+    'severity' => $YAC_enabled ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+  );
+
+  if ($YAC_enabled) {
+    $requirements['YAC']['description'] = $t('!name has been running).',
+      array(
+        '!name' => $t('YAC'),
+      )
+    );
+  }
+  else {
+    $requirements['YAC']['description'] = $t('The YAC module needs the <a href="!YAC_link">YAC</a> or the <a href="!YAC_link">YAC</a> extension.',
+      array(
+        '!YAC_link' => 'https://pecl.php.net/package/yac',
+        '!YAC_link' => 'https://github.com/laruence/yac',
+      )
+    );
+  }
+
+  return $requirements;
+}

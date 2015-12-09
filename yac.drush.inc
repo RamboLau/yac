@@ -1,1 +1,11 @@
-/Users/panjunliu/verycloud/contrib/yac_drupal/yac.drush.inc
+<?php
+
+
+/**
+ * Implements hook_drush_exit().
+ */
+function yac_drush_exit() {
+  if (class_exists('DrupalYACCache')){
+    DrupalYACCache::remoteFlush();
+  }
+}

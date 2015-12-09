@@ -1,1 +1,14 @@
-/Users/panjunliu/verycloud/contrib/yac_drupal/yac.info
+name = YAC - A fast shared memory user data cache for PHP
+description = Enables the YAC.
+package = Performance and scalability
+core = 7.x
+files[] = yac.module
+files[] = yac_cache.inc
+files[] = tests/yac.test
+
+; Information added by Drupal.org packaging script on 2015-11-18
+version = "7.x-1.0"
+core = "7.x"
+project = "yac"
+datestamp = "1449542652"
+
